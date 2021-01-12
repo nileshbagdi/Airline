@@ -1,0 +1,38 @@
+<div class="container custom-container">
+
+<form #form="ngForm" (ngSubmit)="saveUser(customer)" autocomplete="off">
+
+    <h3>Customer Registation</h3>
+
+    <div id="reg" class="form-group">
+        <label data-error="Required field!">Username </label>
+      <input class="validate" name="username" type="text" #username="ngModel" [(ngModel)]="customer.username" class="form-control" value="username" placeholder="Username" required>
+      <br>
+      <label data-error="Required field!">First Name </label>
+      <input class="validate" name="firstname" type="text" #firstname="ngModel" [(ngModel)]="customer.firstname" class="form-control" placeholder="First Name" required>
+      <br>
+      <label data-error="Required field!">Last Name </label>
+      <input class="validate" name="lastname" type="text" #lastname="ngModel" [(ngModel)]="customer.lastname" class="form-control" placeholder="Last Name" required>
+      <br>
+      <label [attr.data-error]="password.errors!=null?(password.errors.required?'Required field!':'Minimum 3 characters needed'):''" class="visually-hidden">Password </label>
+      <input name="password" type="password" #password="ngModel" [(ngModel)]="customer.password" class="form-control" placeholder="Password" required minlength="3">
+      <br>
+      <label class="visually-hidden">Re-enter Password </label>
+      <input name="cpassword" type="password" #cpassword="ngModel" [(ngModel)]="customer.cpassword" class="form-control" placeholder="Re-enter Password" required minlength="3">
+      <br>
+      <label data-error="Invalid EmailID!">Email ID </label>
+      <input name="emailid" type="email" #emailid="ngModel" [(ngModel)]="customer.emailid" class="form-control" placeholder="Email ID" [pattern]="emailPattern">
+      <br>
+      <label>Date of Birth </label>
+      <input name="dob" type="date" #dob="ngModel" [(ngModel)]="customer.dob" class="form-control" placeholder="DOB(DD/MM/YY)">
+      <br>
+      <label>Phone number </label>
+      <input name="number" type="number" #number="ngModel" [(ngModel)]="customer.number" class="form-control" placeholder="Phone Number">
+      <br>
+     
+      <button [disabled]="!form.valid" class="btn btn-success btn-lg btn-block" routerLink="UserLogin" type="submit">SUBMIT</button>
+    </div>
+
+</form>
+</div>
+
