@@ -227,7 +227,7 @@ export class SeatbookingComponent implements OnInit {
       seatObject.status = "booked";
       this.cart.selectedSeats.push(seatObject.seatLabel);
       this.cart.seatstoStore.push(seatObject.key);
-      th += seatObject.price;is.cart.totalamount
+      //th += seatObject.price;is.cart.totalamount
     }
     else if( seatObject.status = "booked" )
     {
