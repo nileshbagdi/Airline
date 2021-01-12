@@ -13,6 +13,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { HomeComponent } from './home/home.component';
 import { PaymentComponent } from './payment/payment.component';
 import { SeatbookingComponent } from './seatbooking/seatbooking.component';
+import { SearchflightComponent } from './searchflight/searchflight.component';
+import { ShowflightComponent } from './showflight/showflight.component';
 
 @NgModule({
   declarations: [
@@ -21,7 +23,9 @@ import { SeatbookingComponent } from './seatbooking/seatbooking.component';
     LoginComponent,
     HomeComponent,
     PaymentComponent,
-    SeatbookingComponent
+    SeatbookingComponent,
+    SearchflightComponent,
+    ShowflightComponent
   ],
   imports: [
     BrowserModule,

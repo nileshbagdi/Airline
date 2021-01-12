@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { NgForm } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
+import { LoginserviceService}from './../services/loginservice.service';
 
 @Component({
   selector: 'app-login',
@@ -7,9 +10,15 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LoginComponent implements OnInit {
 
-  constructor() { }
+  constructor( private _activatedRouter: ActivatedRoute, private _router: Router, private loginService:LoginserviceService) {​​​​​ }​​​​​
 
-  ngOnInit(): void {
-  }
+  ngOnInit(): void {​​​​​
+  }​​​​​
+
+  onSubmit(f: NgForm){​​​​​
+    console.log(f.value.username, f.value.password);
+    this.loginService.GetUserLoginCheck(f.value.username, f.value.password).subscribe()
+        this._router.navigate(['/list']);
+      }
 
 }

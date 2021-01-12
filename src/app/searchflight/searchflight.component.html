@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+  
+<div class="container custom-container">
+    <div class="col-md-12">
+      <h3 class="mb-3 text-center">Search Flights</h3>
+  
+      <button class="btn btn-secondary btn-lg btn-block" (click)="toggle()" id="bt">
+        {{buttonName}}
+    </button>
+      <div class="form-group">
+        <input type="text"  class="form-control" placeholder="Source">
+      </div>
+
+      <div class="form-group">
+        <input type="text"  class="form-control" placeholder="Destination">
+      </div>
+  
+      <div class="form-group">
+        <input type="text"  class="form-control" placeholder="Date(DD/MM/YY)">
+      </div>
+      <ng-container *ngIf="show">
+        <div class="form-group">
+          <input type="text"  class="form-control astha" placeholder="Return Date(DD/MM/YY)">
+        </div>
+      </ng-container>
+   
+      <div class="form-group">
+        <input type="text"  class="form-control" placeholder="No. of Traveller">
+      </div>
+      <div class="form-group">
+        <input type="text"  class="form-control" placeholder="Class">
+      </div>
+  
+      <div class="form-group">
+        <button class="btn btn-success btn-lg btn-block" >Search Flights</button>
+      </div>
+  
+    </div>
+  </div>
+</body>
+</html>
